@@ -43,7 +43,7 @@
 
       p.movie-description {
         margin-top: 15%;
-        padding: 0px 15px;
+        padding: 0 15px;
         color: black;
         font-size: 20px;
       }
@@ -65,7 +65,7 @@
   .modal {
     flex-direction: column;
     max-width: 300px;
-    max-height: 750px;
+    max-height: calc(100vh - 50px);
     overflow-y: auto;
 
     .left-side, .right-side {
