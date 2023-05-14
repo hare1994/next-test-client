@@ -5,7 +5,7 @@
   border: 2px solid #ffffff;
   border-radius: 4px;
   font-size: 16px;
-  cursor: pointer;
+  cursor: pointer !important;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 
   &:hover {
