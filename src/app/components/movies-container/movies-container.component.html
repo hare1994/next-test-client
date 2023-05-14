@@ -1,0 +1,21 @@
+<div class="section-container">
+  <div class="movies-container-title-and-search">
+    <input class="movie-search-input" type="text" placeholder="Search movies..." [(ngModel)]="searchQuery"
+           (input)="searchMovieByName()"/>
+    <label>Explore your next Movies and tv shows</label>
+  </div>
+  <div class="movies-container">
+    <app-movie-box (readMore)="openModal($event)" [movie]="movie" *ngFor="let movie of movies"
+                   [@fadeAnimation]="movie"></app-movie-box>
+  </div>
+
+  <div class="movies-navigation">
+    <button class="prev-btn" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button class="next-btn" [disabled]="currentPage >= getNumberOfPages()" (click)="onPageChange(currentPage + 1)">
+      Next
+    </button>
+  </div>
+</div>
+
+<app-movie-modal (onModalClose)="closeModal()" [movie]="selectedMovie" *ngIf="selectedMovie"></app-movie-modal>
